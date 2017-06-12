@@ -1,10 +1,9 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Grafo {
-    private List<Vertice> grafo;
+    private ArrayList<Vertice> grafo;
     
     public Grafo (String tipo){
         ArrayList<Aresta> arestas = new ArrayList<Aresta>();

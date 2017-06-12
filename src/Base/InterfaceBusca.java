@@ -1,8 +1,8 @@
 package Base;
 
-import Model.VerticeCaminho;
-import java.util.List;
+import Model.Caminho;
+import Model.Grafo;
 
 public interface InterfaceBusca {
-    public List<VerticeCaminho> caminho();
+    public Caminho buscar(Grafo grafo, String origem, String destino);
 }

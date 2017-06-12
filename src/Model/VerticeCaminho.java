@@ -6,6 +6,13 @@ public class VerticeCaminho {
     private int custoAcumulado;
     private boolean verificado;
 
+    public VerticeCaminho(String nome, String anterior, int custoAcumulado, boolean verificado) {
+        this.nome = nome;
+        this.anterior = anterior;
+        this.custoAcumulado = custoAcumulado;
+        this.verificado = verificado;
+    }
+
     public String getNome() {
         return nome;
     }
