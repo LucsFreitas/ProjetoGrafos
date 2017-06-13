@@ -14,4 +14,8 @@ public class Aresta {
     public int getCusto(){
         return custo;
     }
+
+    public String getDestino() {
+        return destino;
+    }
 }

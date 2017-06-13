@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Vertice {
     private String nome;
-    private List<Aresta> adj;
+    private ArrayList<Aresta> adj;
     
-    public Vertice(String nome, List<Aresta> adj){
+    public Vertice(String nome, ArrayList<Aresta> adj){
         this.nome = nome;
         this.adj = adj;
     }
@@ -19,4 +19,5 @@ public class Vertice {
     public List<Aresta> getAdj() {
         return adj;
     }
+    
 }

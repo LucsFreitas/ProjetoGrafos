@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 
 public class Grafo {
-    private ArrayList<Vertice> grafo;
+    public ArrayList<Vertice> grafo;
     
     public Grafo (String tipo){
         ArrayList<Aresta> arestas = new ArrayList<Aresta>();
@@ -162,4 +162,13 @@ public class Grafo {
             grafo.add(new Vertice ("hospital hapvida", arestas));
         }
     }    
+    
+    public Vertice getVertice(String nome){
+        for(Vertice v : grafo){
+            if (v.getNome().equals(nome))
+                return v;
+        }
+        
+        return null;
+    }
 }

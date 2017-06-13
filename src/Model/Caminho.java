@@ -9,5 +9,7 @@ public class Caminho {
     public Caminho() {
         custoTotal = Integer.MAX_VALUE;
         caminho =  new ArrayList<VerticeCaminho>();
-    }      
+    }
+    
+    
 }
