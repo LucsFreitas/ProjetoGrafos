@@ -10,7 +10,7 @@ import Model.Vertice;
 import java.util.ArrayList;
 
 
-public class Gulosa implements InterfaceBusca{
+public class A_Star implements InterfaceBusca{
     private DistanciaLinhaReta dist = new DistanciaLinhaReta();
 
     @Override
@@ -34,6 +34,7 @@ public class Gulosa implements InterfaceBusca{
                 Vertice vLoop = grafo.getVertice(a.getDestino());
                 int custoLoop = dist.getDistanciaTotal(Cast.convertToInt(vLoop.getNome()), 
                         Cast.convertToInt(destino));
+                custoLoop += a.getCusto();
                 
                 if (custoLoop < custo){
                     if (!vertices.contains(vLoop.getNome())){
@@ -42,13 +43,12 @@ public class Gulosa implements InterfaceBusca{
                         custoAresta = a.getCusto();
                     }
                 }
-                
             }
             custoTotal += custoAresta;
             vertices.add(vAtual.getNome());
         }
         
         return new Caminho(vertices, custoTotal);
-    }    
+    }
     
 }

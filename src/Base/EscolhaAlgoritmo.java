@@ -1,5 +1,6 @@
 package Base;
 
+import Algoritmos.A_Star;
 import Algoritmos.Dijkstra;
 import Algoritmos.Gulosa;
 import Model.Caminho;
@@ -19,6 +20,7 @@ public class EscolhaAlgoritmo {
     public void escolherAlgoritmo(String origem, String destino){
         Dijkstra dijkstra = new Dijkstra();
         Gulosa gulosa = new Gulosa();
+        A_Star a_Star = new A_Star();
         
         int opcao;
         Scanner scan = new Scanner(System.in);
@@ -26,13 +28,14 @@ public class EscolhaAlgoritmo {
         System.out.println("\tAlgoritmos:");
         System.out.println("1 - Dijkstra");
         System.out.println("2 - Guloso");
+        System.out.println("3 - A_Star");
         
         do{
             System.out.print("\nDigite a opção desejada: ");
             opcao = scan.nextInt();
-            if (opcao < 1 && opcao > 2)
+            if (opcao < 1 && opcao > 3)
                 System.out.println("Opção invalida");
-        } while(opcao < 1 && opcao > 2);
+        } while(opcao < 1 && opcao > 3);
         
         Caminho caminhoOrientado;
         Caminho caminhoNaoOrientado;
@@ -47,6 +50,12 @@ public class EscolhaAlgoritmo {
             caminhoOrientado = gulosa.buscar(gOrientado, origem, destino);
             
             exibirCaminho(caminhoOrientado, caminhoNaoOrientado, "da Busca Gulosa");
+        }
+        else if (opcao == 3){
+            caminhoNaoOrientado = a_Star.buscar(gNaoOrientado, origem, destino);
+            caminhoOrientado = a_Star.buscar(gOrientado, origem, destino);
+            
+            exibirCaminho(caminhoOrientado, caminhoNaoOrientado, "da Busca A_Star");
         }
     }
     
