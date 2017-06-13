@@ -3,13 +3,19 @@ package Model;
 import java.util.ArrayList;
 
 public class Caminho {
-    public int custoTotal;
-    public ArrayList<VerticeCaminho> caminho;
+    private ArrayList<String> vertices;
+    private int custo;
 
-    public Caminho() {
-        custoTotal = Integer.MAX_VALUE;
-        caminho =  new ArrayList<VerticeCaminho>();
+    public Caminho(ArrayList<String> vertices, int custo) {
+        this.vertices = vertices;
+        this.custo = custo;
     }
-    
-    
+
+    public ArrayList<String> getVertices() {
+        return vertices;
+    }
+
+    public int getCusto() {
+        return custo;
+    }
 }

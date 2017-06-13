@@ -6,6 +6,7 @@ public class Grafo {
     public ArrayList<Vertice> grafo;
     
     public Grafo (String tipo){
+        grafo = new ArrayList<Vertice>();
         ArrayList<Aresta> arestas = new ArrayList<Aresta>();
                
         if (tipo.equals("nao orientado")){

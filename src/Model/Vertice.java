@@ -16,7 +16,7 @@ public class Vertice {
         return nome;
     }
 
-    public List<Aresta> getAdj() {
+    public ArrayList<Aresta> getAdj() {
         return adj;
     }
     
