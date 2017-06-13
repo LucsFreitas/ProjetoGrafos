@@ -3,6 +3,7 @@ package Base;
 import Algoritmos.A_Star;
 import Algoritmos.Dijkstra;
 import Algoritmos.Gulosa;
+import Algoritmos.Largura;
 import Model.Caminho;
 import Model.Grafo;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class EscolhaAlgoritmo {
         Dijkstra dijkstra = new Dijkstra();
         Gulosa gulosa = new Gulosa();
         A_Star a_Star = new A_Star();
+        Largura largura = new Largura();
         
         int opcao;
         Scanner scan = new Scanner(System.in);
@@ -29,13 +31,14 @@ public class EscolhaAlgoritmo {
         System.out.println("1 - Dijkstra");
         System.out.println("2 - Guloso");
         System.out.println("3 - A_Star");
+        System.out.println("4 - Largura");
         
         do{
             System.out.print("\nDigite a opção desejada: ");
             opcao = scan.nextInt();
-            if (opcao < 1 && opcao > 3)
+            if (opcao < 1 && opcao > 4)
                 System.out.println("Opção invalida");
-        } while(opcao < 1 && opcao > 3);
+        } while(opcao < 1 && opcao > 4);
         
         Caminho caminhoOrientado;
         Caminho caminhoNaoOrientado;
@@ -56,6 +59,12 @@ public class EscolhaAlgoritmo {
             caminhoOrientado = a_Star.buscar(gOrientado, origem, destino);
             
             exibirCaminho(caminhoOrientado, caminhoNaoOrientado, "da Busca A_Star");
+        }
+        else{
+            caminhoNaoOrientado = largura.buscar(gNaoOrientado, origem, destino);
+            caminhoOrientado = largura.buscar(gOrientado, origem, destino);
+            
+            exibirCaminho(caminhoOrientado, caminhoNaoOrientado, "da Busca em Largura");
         }
     }
     

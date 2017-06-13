@@ -50,5 +50,4 @@ public class Gulosa implements InterfaceBusca{
         
         return new Caminho(vertices, custoTotal);
     }    
-    
 }

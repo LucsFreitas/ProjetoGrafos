@@ -4,15 +4,18 @@ import Base.Cast;
 import Base.InterfaceBusca;
 import Model.Aresta;
 import Model.Caminho;
+import Model.CaminhoDijkstra;
 import Model.DistanciaLinhaReta;
 import Model.Grafo;
 import Model.Vertice;
+import Model.VerticeCaminhoDijkstra;
+import com.sun.org.apache.xerces.internal.util.XMLSymbols;
 import java.util.ArrayList;
 
 
 public class A_Star implements InterfaceBusca{
     private DistanciaLinhaReta dist = new DistanciaLinhaReta();
-
+    
     @Override
     public Caminho buscar(Grafo grafo, String origem, String destino) {
         ArrayList<String> vertices = new ArrayList();
@@ -50,5 +53,6 @@ public class A_Star implements InterfaceBusca{
         
         return new Caminho(vertices, custoTotal);
     }
+    
     
 }
