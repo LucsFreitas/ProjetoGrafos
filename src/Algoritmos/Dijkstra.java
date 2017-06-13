@@ -12,7 +12,5 @@ public class Dijkstra implements InterfaceBusca{
     @Override
     public Caminho buscar(Grafo grafo, String origem, String destino) {
         
-    }
-
-     
+    }     
 }
