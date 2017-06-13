@@ -172,4 +172,8 @@ public class Grafo {
         
         return null;
     }
+    
+    public Vertice getVertice(int index){
+        return grafo.get(index);
+    }
 }

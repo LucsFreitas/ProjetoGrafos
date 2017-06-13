@@ -1,12 +1,12 @@
 package Model;
 
-public class VerticeCaminhoComplexo {
+public class VerticeCaminhoDijkstra {
     private String nome;
     private String anterior;
     private int custoAcumulado;
     private boolean visitado;
 
-    public VerticeCaminhoComplexo(String nome, String anterior, int custoAcumulado, boolean visitado) {
+    public VerticeCaminhoDijkstra(String nome, String anterior, int custoAcumulado, boolean visitado) {
         this.nome = nome;
         this.anterior = anterior;
         this.custoAcumulado = custoAcumulado;

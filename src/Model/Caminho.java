@@ -18,4 +18,5 @@ public class Caminho {
     public int getCusto() {
         return custo;
     }
+
 }

@@ -1,5 +1,7 @@
 package Model;
 
+import Base.Cast;
+
 public class DistanciaLinhaReta {
     private int distanciaEmLinhaReta[][];
 
@@ -25,41 +27,7 @@ public class DistanciaLinhaReta {
         distanciaEmLinhaReta = mat;
     }
     
-    private int convertToInt(String str){
-        if (str.equals("ilha do retiro"))
-            return 0;
-        else if (str.equals("hospital ilha do leite"))
-            return 1;
-        else if (str.equals("faculdade nova roma"))
-            return 2;
-        else if (str.equals("estacao afogados"))
-            return 3;
-        else if (str.equals("estacao largo da paz"))
-            return 4;
-        else if (str.equals("7 DSUP"))
-            return 5;
-        else if (str.equals("cabanga"))
-            return 6;
-        else if (str.equals("estacao joana bezerra"))
-            return 7;
-        else if (str.equals("forte das cinco pontas"))
-            return 8;
-        else if (str.equals("estacao recife"))
-            return 9;
-        else if (str.equals("mercado sao jose"))
-            return 10;
-        else if (str.equals("praca da independencia"))
-            return 11;
-        else if (str.equals("IMIP"))
-            return 12;
-        else
-            return 13;
-    }
-    
-    private int getDistanciaTotal (String origem, String destino){
-        int verticeOrigem = convertToInt(origem);
-        int verticeDestino = convertToInt(destino);
-        
-        return distanciaEmLinhaReta[verticeOrigem][verticeDestino];
+    public int getDistanciaTotal (int origem, int destino){        
+        return distanciaEmLinhaReta[origem][destino];
     }
 }
